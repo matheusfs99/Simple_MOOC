@@ -10,8 +10,8 @@ def index(request):
     template_name = 'courses/index.html'
     return render(request, template_name, context)
 
-def details(request, id):
-    course = get_object_or_404(Course, id=id)
+def details(request, slug):
+    course = get_object_or_404(Course, slug=slug)
     context = {
         'course': course
     }
